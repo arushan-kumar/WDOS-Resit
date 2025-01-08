@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="pharmacy.css">
+</head> 
+<body>
+
+    <h1>Order Summary</h1>
+
+    
+    <section>
+        <h2>Customer Information</h2>
+        <form id="customer-info-form">
+            <p><label for="name">Name:</label> <input type="text" id="name" name="name" required></p>
+            <p><label for="email">Email:</label> <input type="email" id="email" name="email" required></p>
+            <p><label for="address">Address:</label> <input type="text" id="address" name="address" required></p>
+
+            
+            <label for="payment-method">Select the payment method: </label>
+            <p>
+                <label for="cash">Cash:</label> 
+                <input type="radio" id="cash" name="payment-method" value="cash" required>
+            </p>
+            <p>
+                <label for="card">Card:</label> 
+                <input type="radio" id="card" name="payment-method" value="card" required>
+            </p>
+
+           
+            <div id="card-details" style="display:none;">
+                <p>
+                    <label for="card-number">Card Number:</label> 
+                    <input type="text" id="card-number" name="card-number" pattern="\d{16}" placeholder="Enter 16-digit card number">
+                </p>
+                <p>
+                    <label for="expiry-date">Expiry Date:</label> 
+                    <input type="month" id="expiry-date" name="expiry-date">
+                </p>
+                <p>
+                    <label for="cvv">CVV:</label> 
+                    <input type="text" id="cvv" name="cvv" pattern="\d{3}" placeholder="Enter 3-digit CVV">
+                </p>
+            </div>
+
+            <section>
+                <button type="button" onclick="confirmOrder()">Pay</button>
+                <p id="confirmation-message"></p>
+            </section>
+        </form>
+    </section>
+
+   
+    <section>
+        <h2>Items Ordered</h2>
+        <table id="items-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total Price</td>
+                    <td id="total-price">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+ 
+    <script src="Summary.js"></script>
+    <script>
+        
+        document.getElementById('customer-info-form').addEventListener('change', function(event) {
+            const cardDetails = document.getElementById('card-details');
+            if (event.target.id === 'card') {
+                cardDetails.style.display = 'block';
+            } else if (event.target.id === 'cash') {
+                cardDetails.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Ordering System</title>
+    <link rel="stylesheet" href="pharmacy.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy Ordering System</h1>
+        <form class="search-form">
+            <input type="search" id="search" placeholder="Search for medicines">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    
+    <main>
+        <h2>Order Medicines</h2>
+        <form id="order-form">
+            <!-- Analgesics -->
+            <section class="medicine-section">
+                <h3>Analgesics</h3>
+                <select id="analgesics" name="analgesics">
+                    <option value="paracetamol">Paracetamol - $3/pack</option>
+                    <option value="ibuprofen">Ibuprofen - $5/pack</option>
+                    <option value="aspirin">Aspirin - $4/pack</option>
+                    <option value="diclofenac">Diclofenac - $6/pack</option>
+                    <option value="naproxen">Naproxen - $7/pack</option>
+                    <option value="ketorolac">Ketorolac - $8/pack</option>
+                </select>
+                <input type="number" id="analgesic-quantity" name="analgesic-quantity" placeholder="Qty" min="1">
+                <button type="button" class="add-item">Add Item</button>
+            </section>
+
+            <!-- Antibiotics -->
+            <section class="medicine-section">
+                <h3>Antibiotics</h3>
+                <select id="antibiotics" name="antibiotics">
+                    <option value="amoxicillin">Amoxicillin - $10/pack</option>
+                    <option value="azithromycin">Azithromycin - $12/pack</option>
+                    <option value="doxycycline">Doxycycline - $15/pack</option>
+                    <option value="ciprofloxacin">Ciprofloxacin - $18/pack</option>
+                    <option value="cephalexin">Cephalexin - $20/pack</option>
+                    <option value="metronidazole">Metronidazole - $25/pack</option>
+                </select>
+                <input type="number" id="antibiotic-quantity" name="antibiotic-quantity" placeholder="Qty" min="1">
+                <button type="button" class="add-item">Add Item</button>
+            </section>
+
+            <!-- Antidepressants -->
+            <section class="medicine-section">
+                <h3>Antidepressants</h3>
+                <select id="antidepressants" name="antidepressants">
+                    <option value="fluoxetine">Fluoxetine - $15/pack</option>
+                    <option value="sertraline">Sertraline - $17/pack</option>
+                    <option value="paroxetine">Paroxetine - $20/pack</option>
+                    <option value="amitriptyline">Amitriptyline - $22/pack</option>
+                    <option value="venlafaxine">Venlafaxine - $25/pack</option>
+                    <option value="duloxetine">Duloxetine - $30/pack</option>
+                </select>
+                <input type="number" id="antidepressant-quantity" name="antidepressant-quantity" placeholder="Qty" min="1">
+                <button type="button" class="add-item">Add Item</button>
+            </section>
+
+            <!-- Antihistamines -->
+            <section class="medicine-section">
+                <h3>Antihistamines</h3>
+                <select id="antihistamines" name="antihistamines">
+                    <option value="loratadine">Loratadine - $5/pack</option>
+                    <option value="cetirizine">Cetirizine - $7/pack</option>
+                    <option value="fexofenadine">Fexofenadine - $9/pack</option>
+                    <option value="diphenhydramine">Diphenhydramine - $6/pack</option>
+                </select>
+                <input type="number" id="antihistamine-quantity" name="antihistamine-quantity" placeholder="Qty" min="1">
+                <button type="button" class="add-item">Add Item</button>
+            </section>
+
+            <!-- Antihypertensives -->
+            <section class="medicine-section">
+                <h3>Antihypertensives</h3>
+                <select id="antihypertensives" name="antihypertensives">
+                    <option value="atenolol">Atenolol - $10/pack</option>
+                    <option value="lisinopril">Lisinopril - $12/pack</option>
+                    <option value="amlodipine">Amlodipine - $14/pack</option>
+                    <option value="losartan">Losartan - $16/pack</option>
+                    <option value="metoprolol">Metoprolol - $18/pack</option>
+                    <option value="hydrochlorothiazide">Hydrochlorothiazide - $20/pack</option>
+                </select>
+                <input type="number" id="antihypertensive-quantity" name="antihypertensive-quantity" placeholder="Qty" min="1">
+                <button type="button" class="add-item">Add Item</button>
+            </section>
+
+            <button type="button" id="add-to-favourites">Add to Favourites</button>
+            <button type="button" id="apply-favourites">Apply Favourites</button>
+        </form>
+
+        <table id="items-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total Price</td>
+                    <td id="total-price">$0</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button id="buy-now">Buy Now</button>
+    </main>
+
+    <script src="Pharmacy.js"></script>
+</body>
+</html>
